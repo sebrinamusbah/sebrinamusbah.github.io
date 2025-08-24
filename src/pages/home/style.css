@@ -1,0 +1,154 @@
+/* ------------------------ General Section ------------------------ */
+
+section {
+    flex: 1 0 auto;
+    position: relative;
+    width: 100%;
+    transition: all 0.5s ease-in;
+}
+
+
+/* ------------------------ Typography ------------------------ */
+
+.who_am_I {
+    font-family: Cinzel;
+}
+
+.has-first-color {
+    color: var(--primary-color);
+}
+
+
+/* ------------------------ Buttons ------------------------ */
+
+.ac_btn {
+    padding: 4px 19px;
+    color: var(--secondary-color);
+    position: relative;
+    border: var(--secondary-color) 2px solid;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    cursor: pointer;
+    border-radius: 0;
+    margin-right: 20px;
+}
+
+.ac_btn:hover {
+    box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
+}
+
+.ac_btn .ring {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    top: 0;
+    left: 0;
+    transform: translate3d(0px, 90px, 0px);
+}
+
+.ac_btn .one {
+    background-color: #000;
+    z-index: -4;
+    transition: all 0.3s;
+}
+
+.ac_btn .two {
+    background-color: var(--primary-color);
+    z-index: -3;
+    transition: all 0.5s;
+}
+
+.ac_btn .three {
+    background-color: var(--secondary-color);
+    z-index: -3;
+    transition: all 0.7s;
+}
+
+#button_p {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#button_h:hover {
+    color: var(--primary-color);
+}
+
+
+/* ------------------------ Home / Intro Section ------------------------ */
+
+.intro_sec {
+    display: flex;
+    /* side by side layout */
+    flex-direction: row;
+    height: 100vh;
+    /* full viewport height */
+    min-height: 700px;
+    margin-top: -60px;
+    padding: 0 20px;
+}
+
+
+/* Background Image */
+
+.h_bg-image {
+    flex: 1;
+    /* take half width */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Text Section */
+
+.text {
+    flex: 1;
+    /* take half width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    max-width: 700px;
+}
+
+
+/* Headings */
+
+.intro h1 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.intro h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+    .intro_sec {
+        flex-direction: column;
+        /* stack image above text */
+        height: auto;
+        padding: 40px 20px;
+    }
+    .h_bg-image {
+        width: 100%;
+        height: 300px;
+        /* adjust as needed */
+        margin-bottom: 20px;
+    }
+    .text {
+        width: 100%;
+    }
+    .ac_btn {
+        margin-bottom: 15px;
+    }
+}

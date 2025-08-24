@@ -160,7 +160,7 @@ const contactConfig = {
 };
 
 const socialprofils = {
-    github: "https://github.com",
+    github: "https:/sebrinamusbah/github.com",
     Telegram: "https://facebook.com",
     linkedin: "https://linkedin.com",
 

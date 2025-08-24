@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/sebrinamusbagithub.io/static/css/main.6f5d1737.css",
+    "main.js": "/sebrinamusbagithub.io/static/js/main.53b05a71.js",
+    "index.html": "/sebrinamusbagithub.io/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.6f5d1737.css",
+    "static/js/main.53b05a71.js"
+  ]
+}

@@ -1,42 +1,366 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ===============================
+   App.css - Full Light/Dark Mode
+================================= */
+
+
+/* ===============================
+   CSS Variables for Themes
+================================= */
+
+
+/* Default light mode variables */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #121212;
+    --primary-color: #AA367C;
+    --secondary-color: #4A2FBD;
+    --btn-bg: var(--primary-color);
+    --btn-text: #fff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Dark mode variables */
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #4A2FBD;
+    --secondary-color: #AA367C;
+    --btn-bg: var(--secondary-color);
+    --btn-text: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Step 2: General section spacing */
+
+section {
+    padding: 100px 20px;
+    /* top/bottom & horizontal spacing */
+    scroll-margin-top: 140px;
+    /* offset for fixed navbar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* ===============================
+   Global Styles
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-  padding: 2em;
+html {
+    scroll-behavior: smooth;
 }
 
-.read-the-docs {
-  color: #888;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: all 0.4s ease;
+}
+
+
+/* ===============================
+   Links
+================================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+
+/* ===============================
+   Buttons
+================================= */
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out, transform 0.2s ease;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Primary Button */
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--btn-text);
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+
+/* Secondary Button */
+
+.btn-secondary {
+    background: var(--btn-text);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+
+/* ===============================
+   Highlights
+================================= */
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+
+/* ===============================
+   Sections
+================================= */
+
+section {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.4s ease;
+}
+
+
+/* ===============================
+   Navbar
+================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.4s ease;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* ===============================
+   Hero Section
+================================= */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 50px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+
+/* Hero image */
+
+.hero-image img {
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+
+/* ===============================
+   About Section
+================================= */
+
+.about-section {
+    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.about-container h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.about-container p {
+    color: var(--text-color);
+    font-size: 18px;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+}
+
+
+/* ===============================
+   Projects Section
+================================= */
+
+.projects-section {
+    padding: 100px 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-tech .tech-badge {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/* ===============================
+   Skills Section
+================================= */
+
+.skills-section {
+    padding: 100px 50px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-badge {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   Contact Section
+================================= */
+
+.contact-section {
+    padding: 100px 50px;
+}
+
+.contact-container p,
+.contact-container a {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.contact-container a {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   Footer
+================================= */
+
+.footer-section {
+    padding: 40px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.footer-section a {
+    color: var(--primary-color);
+}
+
+
+/* ===============================
+   Theme Toggle Button
+================================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--btn-text);
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.4s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+
+/* ===============================
+   Smooth Scroll Offset
+================================= */
+
+:target::before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
 }

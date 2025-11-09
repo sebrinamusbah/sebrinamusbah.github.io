@@ -1,0 +1,80 @@
+/* Projects Section */
+
+.projects-section {
+    margin-top: 0px;
+    padding: 0px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* title text */
+
+.projects-container h2 {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* subtitle text */
+
+.projects-container p {
+    color: var(--text-color);
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card-bg, var(--bg-color));
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* card title */
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+
+/* card description */
+
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+
+/* tech badges */
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--btn-text);
+}

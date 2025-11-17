@@ -7,7 +7,10 @@ function Projects() {
       title: "Portfolio Website",
       description: "React + Vite + GitHub Pages deployment",
       tech: ["React", "JavaScript", "CSS"],
-      link: "https://reactmovielist-cx3anp2ky-sebrina-musbah-s-projects.vercel.app",
+     <a href="https://reactmovielist-cx3anp2ky-sebrina-musbah-s-projects.vercel.app" target="_blank" rel="noopener noreferrer">
+  React Movie List
+</a>
+,
     },
     {
       title: "Food Order System",

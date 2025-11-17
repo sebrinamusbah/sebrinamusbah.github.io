@@ -4,9 +4,7 @@ import "../css/projects.css";
 function Projects() {
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "React + Vite + GitHub Pages deployment",
-      tech: ["React", "JavaScript", "CSS"],
+     
       link: "https://reactmovielist-cx3anp2ky-sebrina-musbah-s-projects.vercel.app",
     },
     {

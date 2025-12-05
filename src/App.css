@@ -1,5 +1,5 @@
 /* ===============================
-   App.css - Full Light/Dark Mode
+   App.css - Full Responsive, Light/Dark Mode
 ================================= */
 
 
@@ -8,7 +8,7 @@
 ================================= */
 
 
-/* Default light mode variables */
+/* Default Light Mode */
 
 :root {
     --bg-color: #ffffff;
@@ -20,7 +20,7 @@
 }
 
 
-/* Dark mode variables */
+/* Dark Mode */
 
 [data-theme="dark"] {
     --bg-color: #121212;
@@ -29,16 +29,6 @@
     --secondary-color: #AA367C;
     --btn-bg: var(--secondary-color);
     --btn-text: #fff;
-}
-
-
-/* Step 2: General section spacing */
-
-section {
-    padding: 100px 20px;
-    /* top/bottom & horizontal spacing */
-    scroll-margin-top: 140px;
-    /* offset for fixed navbar */
 }
 
 
@@ -64,11 +54,6 @@ body {
     transition: all 0.4s ease;
 }
 
-
-/* ===============================
-   Links
-================================= */
-
 a {
     text-decoration: none;
     color: inherit;
@@ -78,11 +63,6 @@ a {
 a:hover {
     opacity: 0.85;
 }
-
-
-/* ===============================
-   Buttons
-================================= */
 
 .btn {
     cursor: pointer;
@@ -94,9 +74,6 @@ a:hover {
     text-align: center;
 }
 
-
-/* Primary Button */
-
 .btn-primary {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: var(--btn-text);
@@ -106,9 +83,6 @@ a:hover {
     opacity: 0.85;
     transform: translateY(-2px);
 }
-
-
-/* Secondary Button */
 
 .btn-secondary {
     background: var(--btn-text);
@@ -122,25 +96,27 @@ a:hover {
 
 
 /* ===============================
-   Highlights
-================================= */
-
-.highlight {
-    color: var(--primary-color);
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-
-/* ===============================
-   Sections
+   Section Spacing
 ================================= */
 
 section {
-    padding: 100px 0;
+    padding: 80px 5%;
+    /* responsive horizontal padding */
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: all 0.4s ease;
+    scroll-margin-top: 140px;
+    /* for sticky navbar */
+}
+
+
+/* Containers for consistent width */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* inner padding for mobile */
 }
 
 
@@ -152,7 +128,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 5%;
     background-color: var(--bg-color);
     color: var(--text-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -186,7 +162,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 50px;
+    padding: 100px 5%;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .hero-content h1 {
@@ -198,11 +176,9 @@ section {
     margin: 15px 0;
 }
 
-
-/* Hero image */
-
 .hero-image img {
     max-width: 400px;
+    width: 100%;
     border-radius: 12px;
 }
 
@@ -212,7 +188,6 @@ section {
 ================================= */
 
 .about-section {
-    padding: 100px 50px;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -236,37 +211,83 @@ section {
 ================================= */
 
 .projects-section {
-    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
+
+/* Project Card */
+
 .project-card {
-    padding: 20px;
-    border-radius: 12px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 380px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
-.project-tech .tech-badge {
-    display: inline-block;
-    margin: 5px 5px 0 0;
-    padding: 5px 10px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-    font-size: 14px;
+
+/* Image */
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.15);
+}
+
+
+/* Gradient overlay */
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+
+/* Title */
+
+.project-card h3 {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
 }
 
 
@@ -275,7 +296,8 @@ section {
 ================================= */
 
 .skills-section {
-    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .skills-grid {
@@ -298,7 +320,8 @@ section {
 ================================= */
 
 .contact-section {
-    padding: 100px 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .contact-container p,
@@ -317,7 +340,7 @@ section {
 ================================= */
 
 .footer-section {
-    padding: 40px 50px;
+    padding: 40px 5%;
     background-color: var(--bg-color);
     color: var(--text-color);
     text-align: center;
@@ -363,4 +386,94 @@ section {
     height: 80px;
     margin-top: -80px;
     visibility: hidden;
+}
+
+
+/* ===============================
+   Responsive Media Queries
+================================= */
+
+
+/* Large Tablets / small desktops */
+
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 80px 5%;
+    }
+    .hero-image img {
+        max-width: 300px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .project-card {
+        height: 260px;
+    }
+    .project-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* Tablets / large phones */
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 3%;
+    }
+    .hero-section {
+        padding: 60px 3%;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .project-card {
+        height: 220px;
+    }
+    .project-card h3 {
+        font-size: 1.25rem;
+    }
+    .skills-grid {
+        justify-content: center;
+    }
+}
+
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    .project-card {
+        height: 200px;
+    }
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+    .skills-grid {
+        gap: 10px;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }

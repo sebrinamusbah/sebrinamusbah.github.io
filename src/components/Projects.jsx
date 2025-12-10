@@ -5,12 +5,12 @@ function Projects() {
   const projects = [
     {
       title: "Movie List Website",
-      link: "https://react-frontendproject-drr7tgjod-sebrina-musbah-s-projects.vercel.app",
+      link: "https://react-frontendproject.vercel.app/",
       image: "/assets/movieWeb.png",
     },
     {
-      title: "Food Order System",
-      link: "https://YOUR-FOOD-ORDER-LINK",
+      title: "MERN Dashboard",
+      link: "https://mern-dashboard-frontend-seven.vercel.app/",
       image: "../assets/react.svg",
     },
     {

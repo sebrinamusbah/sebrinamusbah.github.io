@@ -11,7 +11,7 @@ function Projects() {
     {
       title: "MERN Dashboard",
       link: "https://mern-dashboard-frontend-seven.vercel.app/",
-      image: "../assets/react.svg",
+      image: "../assets/dashboard.png",
     },
     {
       title: "Hospital Management System",

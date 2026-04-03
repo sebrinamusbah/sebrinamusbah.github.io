@@ -1,52 +1,85 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Hero() {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const roles = [
+    "Developer",
+    "AI engineer",
+    "Problem Solver",
+    "Software Engineer",
+  ];
+
+  useEffect(() => {
+    const currentRole = roles[index % roles.length];
+    let i = 0;
+    const typing = setInterval(() => {
+      if (i <= currentRole.length) {
+        setText(currentRole.substring(0, i));
+        i++;
+      } else {
+        clearInterval(typing);
+        setTimeout(() => {
+          setIndex(index + 1);
+        }, 2000);
+      }
+    }, 100);
+    return () => clearInterval(typing);
+  }, [index]);
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800"
+      className="min-h-screen flex items-center justify-center particle-bg bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Left Content */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 animate-slide-up">
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Sebrina Musbah
-              </span>
+            <div className="inline-block px-4 py-2 rounded-full glass text-sm font-semibold text-blue-600 dark:text-blue-400 mb-6">
+              Welcome to my portfolio
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
+              Hi, I'm <span className="animated-gradient">Sebrina Musbah</span>
             </h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-6">
-              Full-Stack Web Developer | React, Node.js, MySQL
-            </p>
+
+            <div className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 mb-6">
+              <span className="typewriter inline-block">{text}</span>
+              <span className="animate-pulse">_</span>
+            </div>
+
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
-              Passionate software engineering student creating elegant solutions
-              to complex problems.
+              Full-Stack Developer crafting beautiful, performant web
+              applications
             </p>
+
             <div className="flex gap-4 justify-center lg:justify-start">
               <a
                 href="#projects"
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover-lift shadow-lg hover:shadow-xl transition-all"
               >
                 View Projects
+                <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 bg-transparent border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 transition-all duration-300"
+                className="px-8 py-3 glass border border-blue-600/30 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover-lift transition-all"
               >
                 Contact Me
               </a>
             </div>
           </div>
 
-          {/* Right Image */}
           <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-all animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-blue-600/30 animate-spin-slow"></div>
               <img
                 src="/vite.svg"
                 alt="Sebrina Musbah"
-                className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl"
+                className="relative w-72 h-72 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>

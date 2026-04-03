@@ -35,10 +35,6 @@ function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 animate-slide-up">
           <div className="flex-1 text-center lg:text-left">
-            <div className="inline-block px-4 py-2 rounded-full glass text-sm font-semibold text-blue-600 dark:text-blue-400 mb-6">
-              Welcome to my portfolio
-            </div>
-
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
               Hi, I'm <span className="animated-gradient">Sebrina Musbah</span>
             </h1>

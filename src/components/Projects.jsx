@@ -33,65 +33,107 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-3"></div>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm">
             Here are some of my recent works and personal projects
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="relative h-48 overflow-hidden bg-gray-200 dark:bg-gray-700">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://via.placeholder.com/400x200?text=Project+Preview";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+        {/* Horizontal Scroll Container */}
+        <div className="relative">
+          <div className="overflow-x-auto overflow-y-hidden pb-8 scroll-smooth hide-scrollbar">
+            <div className="flex gap-8" style={{ minWidth: "min-content" }}>
+              {projects.map((project, index) => (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex-shrink-0 w-full sm:w-[350px] md:w-[400px]"
+                >
+                  <div className="relative h-48 overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        e.target.src =
+                          "https://via.placeholder.com/400x200?text=Project+Preview";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs rounded-full"
-                    >
-                      {tech}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                      View Project →
                     </span>
-                  ))}
-                </div>
-                <span className="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  View Project →
-                </span>
-              </div>
-            </a>
-          ))}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Scroll Indicator (optional) */}
+          <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 mt-4">
+            <div className="w-20 h-1 bg-gray-300 dark:bg-gray-700 rounded-full">
+              <div className="w-10 h-1 bg-blue-600 rounded-full animate-scroll"></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Add this to your global CSS or style tag */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          height: 8px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 10px;
+        }
+        .hide-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+        @keyframes scroll {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(100%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 2s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 }

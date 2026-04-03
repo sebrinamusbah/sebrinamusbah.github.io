@@ -1,104 +1,27 @@
-/* ===================== Reset & Global Styles ===================== */
-
-html {
-    scroll-behavior: smooth;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply antialiased;
+    }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@layer utilities {
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 75px;
-    /* Adjust if you have a fixed navbar */
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    background-color: #121212;
-    /* Dark background */
-    color: #fff;
-    /* Default text color */
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-
-/* Links */
-
-a {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    text-decoration: none;
-    opacity: 0.8;
-}
-
-
-/* Buttons */
-
-button {
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-}
-
-
-/* Lists */
-
-ul {
-    list-style: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* Smooth scroll for anchor links */
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-/* Utility classes */
-
-.text-center {
-    text-align: center;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
-/* Media Queries Example */
-
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }

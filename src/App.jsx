@@ -1,55 +1,38 @@
-// src/App.jsx
-import { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  // Theme state
-  const [theme, setTheme] = useState("light"); // default to light
+  const [theme, setTheme] = useState("dark");
 
-  // Toggle function
+  useEffect(() => {
+    // Apply theme to html element for Tailwind dark mode
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  // Apply theme using data-theme attribute
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
   return (
-    <>
-      {/* Pass theme toggle to Navbar or place button here */}
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navbar toggleTheme={toggleTheme} theme={theme} />
-
-      <section id="home">
-        <Hero />
-      </section>
-
-      <section id="about">
-        <About />
-      </section>
-
-      <section id="projects">
-        <Projects />
-      </section>
-
-      <section id="skills">
-        <Skills />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
-
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

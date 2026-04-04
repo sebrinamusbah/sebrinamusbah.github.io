@@ -36,7 +36,7 @@ function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 animate-slide-up">
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
-              Hi, I'm <span className="animated-gradient">Sebrina Musbah</span>
+              <span className="animated-gradient">Hi, I'm Sebrina Musbah</span>
             </h1>
 
             <div className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 mb-6">

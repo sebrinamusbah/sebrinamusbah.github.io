@@ -12,7 +12,7 @@ function About() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-9 shadow-lg">
             <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
               Hello! I'm{" "}
               <strong className="text-blue-600 dark:text-blue-400">

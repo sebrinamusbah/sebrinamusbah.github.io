@@ -13,9 +13,7 @@ function Footer() {
           </p>
 
           <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400 text-sm">
-            <span>Made with</span>
-            <FaHeart className="text-red-500 w-3 h-3" />
-            <span>by Sebrina Musbah</span>
+            <span>Made by Sebrina Musbah</span>
           </div>
         </div>
       </div>

@@ -86,8 +86,8 @@ function Contact() {
       <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
         {/* LEFT */}
         <div className="flex flex-col justify-center text-gray-900 dark:text-white">
-          <h1 className="text-4xl font-bold mb-4">
-            Contact <span className="text-cyan-400">Me</span>
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Contact Me
           </h1>
 
           <p className="mb-6 text-gray-700 dark:text-gray-300">
@@ -95,12 +95,12 @@ function Contact() {
           </p>
 
           <div className="flex items-center gap-4 mb-2">
-            <FaEnvelope className="text-cyan-400" />
+            <FaEnvelope className="text-blue-600" />
             <span>sebrinamusbah811@gmail.com</span>
           </div>
 
           <div className="flex items-center gap-4 mb-6">
-            <FaPhone className="text-cyan-400" />
+            <FaPhone className="text-green-400" />
             <span>0985673299</span>
           </div>
 
@@ -167,10 +167,10 @@ function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-2 py-3 bg-cyan-400 text-black font-bold rounded hover:scale-105 transition flex justify-center items-center gap-2"
+            className="mt-2 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded hover:scale-105 transition flex justify-center items-center gap-2"
           >
             {isSubmitting ? (
-              <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             ) : (
               <>
                 <FaPaperPlane />
@@ -178,7 +178,6 @@ function Contact() {
               </>
             )}
           </button>
-
           {status && (
             <p className="text-sm mt-2 text-gray-700 dark:text-gray-300">
               {status}

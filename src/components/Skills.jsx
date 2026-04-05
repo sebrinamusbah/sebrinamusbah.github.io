@@ -37,9 +37,9 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+      className="py-20 min-h-screen flex items-center bg-gradient-to-br  from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 ">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white mb-2">
@@ -56,7 +56,7 @@ function Skills() {
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="flex-shrink-0 p-2 md:p-3 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all hover:scale-105 focus:outline-none"
+            className="flex-shrink-0 p-2 md:p-3 rounded-full bg-white dark:bg-gray-700 shadow-md hover:shadow-lg transition-all hover:scale-105 focus:outline-none"
             aria-label="Previous"
           >
             <FaChevronLeft className="text-gray-600 dark:text-gray-300 text-sm md:text-base" />

@@ -80,9 +80,9 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-all animate-pulse"></div>
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-blue-600/30 animate-spin-slow"></div>
               <img
-                src="/vite.svg"
+                src="s.png"
                 alt="Sebrina Musbah"
-                className="relative w-72 h-72 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl hover:scale-105 transition-transform duration-500"
+                className="relative w-80 h-80 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
